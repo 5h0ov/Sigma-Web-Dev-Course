@@ -49,6 +49,9 @@
             return new Promise((resolve, reject) => {
                 timeout = 1 + 6 * Math.random();
                 setTimeout(() => {
+                    let para = document.createElement("p");
+                    para.innerText = ">>> Process completed in " + timeout + " seconds<<<"
+                    document.body.append(para)
                     resolve()
                 }, timeout * 1000);
             })
@@ -64,7 +67,6 @@
                     last.innerHTML = last.innerHTML.slice(0, last.innerHTML.length-3)
                 }
                 else{
-
                     last.innerHTML = last.innerHTML + "."
                 }
 
